@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title> Website with dropdowns</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+      Your Company
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+       <div class="nav-links">
+    <a href="//github.io" target="_blank">Github</a>
+    <a href="https://stackoverflow.com" target="_blank">Stackoverflow</a>
+    <a href="https://in.linkedin.com" target="_blank">LinkedIn</a>
+    <a href="https://codepen.io" target="_blank">Codepen</a>
+    <a href="https://jsfiddle.net" target="_blank">JsFiddle</a>
+  </div>
+</div>
+    <hr>
+   <div class="flex-container">
+  <div>Tools</div> 
+     <p></p>
+     <div>= $</div>
+</div>
+    <a href="https://hotmail.com" target="_blank"  class="original-button">Developers
+    click here</a>    
+  </body>
+</html>
+CSS
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: 'Arial, Helvectica';
+}
+
+.nav {
+  height: 70px;
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 32px;
+  color: dodgerblue;
+  padding: 20px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+  padding: 15px;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #111;
+}
+
+.nav > .nav-links > a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav > #nav-check {
+  display: none;
+}
+@media (max-width:600px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #222;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.flex-container > div {
+  background-color: goldenrod;
+  width: 200px;
+  height: 100px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+  border: 2px solid green;
+  border-radius: 50px;
+}
+.original-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  color: #00a36c;
+  font-size: 18px;
+  border-radius: 5px;
+  width: 200px;
+  height: 40px;
+  font-weight: bold;
+  border: 3px ridge #2aaa8a;
+  background-color: goldenrod;
+  margin: 50px;
+}
+
+.original-button:hover {
+  opacity: .8;
+}
+
+  
+
+
+
+
+    
